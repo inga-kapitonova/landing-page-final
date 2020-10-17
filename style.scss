@@ -1,0 +1,186 @@
+/*
+STYLES START
+*/
+
+$color-grey: #999999;
+$color-white: #fff;
+
+body {
+  background: $color-grey;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: $color-grey;
+}
+
+a {
+  text-decoration: none;
+  color: $color-grey;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.btn {
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+/*
+BG ICONS
+*/
+$icon-size: 20px;
+
+.bg-icon {
+  display: inline-block;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.toggle-icon {
+  background-image: url("img/menu.png");
+  width: 22px;
+  height: $icon-size;
+}
+.download-icon {
+  background-image: url("img/download.png");
+  width: $icon-size;
+  height: $icon-size;
+}
+.twitter-icon {
+  background-image: url("img/twitter.png");
+  width: $icon-size;
+  height: $icon-size;
+}
+.facebook-icon {
+  background-image: url("img/facebook.png");
+  width: $icon-size;
+  height: $icon-size;
+}
+.insta-icon {
+  background-image: url("img/instagram.png");
+  width: $icon-size;
+  height: $icon-size;
+}
+
+/*
+HEADER
+*/
+$header-padding-size: 24px;
+
+.mobile-menu {
+  display: none;
+}
+
+#page-header {
+  background-image: url("img/header-bg.png");
+  background-position: 50%;
+  background-size: cover;
+  padding-top: 63px - $header-padding-size;
+  padding-bottom: 211px;
+}
+.header-nav {
+  max-width: 1128px + ($header-padding-size * 2);
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: $header-padding-size;
+  margin: 0 auto;
+}
+.logo {
+  a {
+    font-size: 1.125em;
+    color: $color-white;
+    font-weight: 300;
+  }
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  .menu-item {
+    color: $color-white;
+    margin-right: 24px;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    line-height: 1.313em;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .menu-item.download:before {
+    content: url("img/download.png");
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+}
+.header-content {
+  max-width: 1300px - ($header-padding-size * 2);
+  padding-left: $header-padding-size;
+  padding-right: $header-padding-size;
+  margin: 124px - $header-padding-size auto 0;
+  color: $color-white;
+  &-box {
+    max-width: 549px;
+  }
+  h1.page-title {
+    font-size: 3.313em;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .page-slogan {
+    font-size: 1.125em;
+    line-height: 1.313em;
+  }
+  .header-btn {
+    background: #f44336;
+    box-shadow: 0px 2px 2px rgba(244, 67, 54, 0.14);
+    color: $color-white;
+    text-transform: uppercase;
+    padding: 20px 34px 20px 54px;
+    background-image: url("img/play.png");
+    background-repeat: no-repeat;
+    background-position: 34px center;
+    &:hover {
+      background-color: #e6382c;
+    }
+  }
+}
+
+/* 
+TABLET
+HEADER
+*/
+@media screen and (max-width: 768px) {
+  #page-header {
+    padding-top: 0;
+    padding-bottom: 121px;
+  }
+  .header-nav {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .header-content-box {
+    max-width: 100%;
+  }
+}
+
+/* 
+MOBILE
+HEADER
+*/
+@media screen and (max-width: 565px) {
+  .mobile-menu {
+    display: block;
+  }
+  .header-links {
+    display: none;
+  }
+}
