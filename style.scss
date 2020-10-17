@@ -2,11 +2,14 @@
 STYLES START
 */
 
-$color-grey: #999999;
+$color-bg: #ccc;
+$color-grey: #999;
 $color-white: #fff;
+$color-footer: #333;
+$color-title: #3c4858;
 
 body {
-  background: $color-grey;
+  background: $color-bg;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -28,6 +31,9 @@ a {
   &:focus {
     outline: none;
   }
+}
+.menu-item:last-child {
+  margin-right: 0;
 }
 
 /*
@@ -111,9 +117,6 @@ $header-padding-size: 24px;
     &:hover {
       text-decoration: underline;
     }
-    &:last-child {
-      margin-right: 0;
-    }
   }
   .menu-item.download:before {
     content: url("img/download.png");
@@ -176,11 +179,107 @@ HEADER
 MOBILE
 HEADER
 */
-@media screen and (max-width: 565px) {
+@media screen and (max-width: 578px) {
   .mobile-menu {
     display: block;
   }
   .header-links {
     display: none;
+  }
+}
+
+/*
+PAGE CONTENT
+*/
+$content-padding-x: 132px;
+$content-margin-x: 10px;
+#page-content {
+  max-width: 1380px + ($content-margin-x * 2);
+  margin: 0 auto;
+  position: relative;
+  top: -50px;
+  .container {
+    background: $color-white;
+    margin: 0 $content-margin-x;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2),
+      0px 2px 24px rgba(0, 0, 0, 0.14);
+    border-radius: 6px;
+    padding: 95px $content-padding-x 80px;
+  }
+}
+
+/*
+TABLET
+PAGE CONTENT
+*/
+
+/*
+MOBILE
+PAGE CONTENT
+*/
+
+/*
+FOOTER
+*/
+$footer-padding-x: 40px;
+#page-footer {
+  max-width: 1122px + ($footer-padding-x * 2);
+  margin: 0 auto;
+  min-height: 65px;
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: $footer-padding-x;
+    padding-left: $footer-padding-x;
+  }
+}
+.footer-links {
+  .menu-item {
+    color: $color-footer;
+    text-transform: uppercase;
+    margin-right: 33px;
+    font-size: 0.7em;
+    font-weight: 500;
+  }
+}
+.copyright {
+  font-size: 0.87em;
+  color: $color-footer;
+}
+
+/*
+TABLET
+FOOTER
+*/
+@media screen and (max-width: 768px) {
+  #page-footer {
+    min-height: 85px;
+  }
+  .footer-links {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .copyright {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/*
+TABLET
+FOOTER
+*/
+@media screen and (max-width: 478px) {
+  #page-footer {
+    min-height: 80px;
+    .container {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+    .menu-item {
+      margin-right: 25px;
+    }
   }
 }
