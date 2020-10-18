@@ -9,7 +9,7 @@ $color-footer: #333;
 $color-role: #777;
 $color-title: #3c4858;
 $color-link: #9c27b0;
-$color-hovered: #8b209e;
+$color-hovered: #741685;
 
 body {
   background: $color-bg;
@@ -77,6 +77,7 @@ BG ICONS
 */
 $icon-size: 20px;
 $dark-icon-size: 18px;
+$gallery-nav-size: 30px;
 
 .bg-icon {
   display: inline-block;
@@ -108,6 +109,11 @@ $dark-icon-size: 18px;
   width: $icon-size;
   height: $icon-size;
 }
+.gplus-icon {
+  background-image: url("img/gplus.png");
+  width: $icon-size + 4px;
+  height: $icon-size;
+}
 .dark-twitter-icon {
   background-image: url("img/dark-twitter.png");
   width: $dark-icon-size;
@@ -137,6 +143,21 @@ $dark-icon-size: 18px;
   background-image: url("img/dark-youtube.png");
   width: $dark-icon-size;
   height: $dark-icon-size;
+}
+.active .studio-icon {
+  background-image: url("img/studio-active.png");
+  width: $gallery-nav-size;
+  height: $gallery-nav-size;
+}
+.work-icon {
+  background-image: url("img/work.png");
+  width: $gallery-nav-size;
+  height: $gallery-nav-size;
+}
+.favorite-icon {
+  background-image: url("img/favorite.png");
+  width: $gallery-nav-size;
+  height: $gallery-nav-size;
 }
 
 /*
@@ -175,9 +196,9 @@ $header-padding-size: 24px;
 .header-links {
   display: flex;
   align-items: center;
+  gap: 24px;
   .menu-item {
     color: $color-white;
-    margin-right: 24px;
     font-size: 0.75em;
     text-transform: uppercase;
     line-height: 1.313em;
@@ -304,12 +325,9 @@ $content-margin-x: 10px;
   font-weight: bold;
 }
 .team-social {
-  a {
-    margin-right: 30px;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 .contact-form {
   max-width: 753px;
@@ -336,6 +354,9 @@ $content-margin-x: 10px;
     left: 0;
     font-size: 0.625em;
     color: $color-link;
+    /*???*/
+    display: none;
+    /*???*/
   }
   input,
   textarea {
@@ -346,7 +367,10 @@ $content-margin-x: 10px;
     border-right: none;
     border-bottom: 1px solid $color-grey;
     font-size: 0.875em;
-    padding: 14px 0 7px;
+    /* padding: 14px 0 7px; */
+    /*???*/
+    padding: 7px 0;
+    /*???*/
     margin-bottom: 40px;
   }
   textarea {
@@ -396,10 +420,11 @@ $footer-padding-x: 40px;
   }
 }
 .footer-links {
+  display: flex;
+  gap: 33px;
   .menu-item {
     color: $color-footer;
     text-transform: uppercase;
-    margin-right: 33px;
     font-size: 0.7em;
     font-weight: 500;
   }
@@ -496,5 +521,236 @@ MOBILE
     .menu-item {
       margin-right: 25px;
     }
+  }
+  .footer-links {
+    display: block;
+  }
+}
+
+/*============================================================
+SIGN UP PAGE
+============================================================*/
+.sign-up {
+  background-image: url("img/signup-bg.png");
+  background-size: cover;
+  #page-header {
+    background-image: none;
+    padding-bottom: 110px - $header-padding-size;
+  }
+  #page-footer,
+  #page-footer a,
+  .copyright {
+    color: $color-white;
+  }
+}
+.white-block {
+  max-width: 365px;
+  background: $color-white;
+  border-radius: 3px;
+  margin: 0 auto 70px;
+  padding: 0 20px 30px;
+  box-sizing: border-box;
+  .slogan {
+    text-align: center;
+    font-size: 0.875em;
+    margin: -20px 0 30px;
+    color: #000;
+  }
+}
+.purple-block {
+  max-width: 324px;
+  background: linear-gradient(90deg, $color-link 0%, $color-hovered 100%);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5), 0px 4px 25px rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  margin: 0 auto;
+  padding: 30px 0;
+  position: relative;
+  top: -50px;
+  h1 {
+    font-size: 1.25em;
+    font-weight: normal;
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 30px;
+  }
+  .signup-social {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+  }
+}
+#sign-up {
+  font-size: 0.875em;
+  text-align: center;
+  .form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 46px;
+  }
+  input {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid $color-grey;
+    color: $color-grey;
+    width: 269px;
+    padding: 10px 0;
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $color-link;
+    }
+  }
+  .signup-btn {
+    background-color: transparent;
+    color: $color-link;
+    &:hover {
+      color: $color-hovered;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .white-block {
+    max-width: 353px;
+  }
+  .purple-block {
+    max-width: 314px;
+  }
+}
+@media screen and (max-width: 354px) {
+  .white-block {
+    margin-right: 13px;
+    margin-left: 13px;
+  }
+}
+
+/*============================================================
+PROFILE PAGE
+============================================================*/
+.profile {
+  #page-header {
+    background-image: url("img/profile-bg.jpg");
+  }
+}
+.member-block {
+  max-width: 604px;
+  margin: 0 auto -100px;
+  position: relative;
+  top: -(95px + 80px);
+  text-align: center;
+  .member-avatar {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3),
+      0px 16px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    margin-bottom: 20px;
+    background-color: #c4c4c4;
+  }
+  .member-name {
+    color: $color-title;
+    font-size: 1.563em;
+    margin-bottom: 15px;
+  }
+  .member-role {
+    color: $color-title;
+    font-size: 0.875em;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+  }
+  .member-info {
+    font-size: 0.875em;
+    line-height: 1.5em;
+  }
+}
+.gallery-block {
+  max-width: 555px;
+  margin: 0 auto;
+}
+.gallery-nav {
+  margin: 0 0 50px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  li {
+    list-style-type: none;
+    a {
+      display: block;
+      width: 100px;
+      padding: 25px 0 14px;
+      color: $color-title;
+      text-transform: uppercase;
+      font-size: 0.75em;
+
+      border-radius: 4px;
+      &:hover {
+        background-color: rgba(200, 200, 200, 0.2);
+      }
+    }
+    &.active a {
+      background-color: $color-link;
+      color: $color-white;
+      box-shadow: 0px 4px 20px rgba(156, 39, 176, 0.45);
+    }
+    .bg-icon {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+.gallery-images {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  .gallery-item {
+    display: block;
+    margin-bottom: 30px;
+  }
+  img {
+    max-width: 262px;
+    background-color: #c4c4c4;
+    border-radius: 6px;
+  }
+}
+/*
+CHEAT STYLE FOR GALLERY. GIVE MASONRY LOOK.
+*/
+.pseudo-masonry-parent {
+  margin-bottom: -154px;
+  .pseudo-masonry {
+    position: relative;
+    top: -154px;
+  }
+}
+@media screen and (max-width: 815px) {
+  .gallery-block {
+    max-width: 100%;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .profile {
+    #page-header {
+      padding-bottom: 310px;
+    }
+  }
+  .pseudo-masonry-parent {
+    margin-bottom: 0px;
+    .pseudo-masonry {
+      position: relative;
+      top: 0px;
+    }
+  }
+}
+@media screen and (max-width: 375px) {
+  .gallery-nav li a {
+    width: 80px;
   }
 }
