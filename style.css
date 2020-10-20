@@ -303,10 +303,7 @@ PAGE CONTENT
     top: 0;
     left: 0;
     font-size: 0.625em;
-    color: #9c27b0;
-    /*???*/
-    display: none;
-    /*???*/ }
+    color: #9c27b0; }
   #forma input,
   #forma textarea {
     width: 100%;
@@ -316,10 +313,7 @@ PAGE CONTENT
     border-right: none;
     border-bottom: 1px solid #999;
     font-size: 0.875em;
-    /* padding: 14px 0 7px; */
-    /*???*/
-    padding: 7px 0;
-    /*???*/
+    padding: 14px 0 7px;
     margin-bottom: 40px; }
   #forma textarea {
     min-height: 92px;
