@@ -130,18 +130,18 @@ hours.
         </p>
         <form id="forma" action="" method="post">
           <div class="row">
-            <div class="form-group left-input">
+            <div class="form-group left-input">      
+              <input type="text" class="form-control" id="form-name" placeholder="Your Name" value=""  onchange="this.setAttribute('value', this.value)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Name'">
               <label for="form-name">Your Name</label>
-              <input type="text" class="form-control" id="form-name" placeholder="Your Name">
             </div>
-            <div class="form-group right-input">
+            <div class="form-group right-input">         
+              <input type="email" class="form-control" id="form-email" placeholder="Your Email" value="" onchange="this.setAttribute('value', this.value)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email'">
               <label for="form-email">Your Email</label>
-              <input type="email" class="form-control" id="form-email" placeholder="Your Email">
            </div>
           </div>       
-          <div class="row textarea">
+          <div class="row textarea">           
+              <textarea class="form-control" id="form-message" placeholder="Your Message" value="" onchange="this.setAttribute('value', this.value)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Message'"></textarea>
               <label for="form-message">Your Message</label>
-              <textarea class="form-control" id="form-message" placeholder="Your Message"></textarea>
           </div> 
           <button type="submit" class="btn submit-btn">GET STARTED</button>
       </form>

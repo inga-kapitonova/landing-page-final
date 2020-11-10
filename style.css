@@ -218,17 +218,21 @@ HEADER
 PAGE CONTENT
 */
 #page-content {
-  max-width: 1400px;
+  max-width: 1380px;
   margin: 0 auto;
   position: relative;
-  top: -50px; }
+  top: -50px;
+  background: #fff;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2), 0px 2px 24px rgba(0, 0, 0, 0.14);
+  border-radius: 6px;
+  padding: 95px 0 80px; }
   #page-content .container {
-    background: #fff;
-    margin: 0 10px;
-    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2), 0px 2px 24px rgba(0, 0, 0, 0.14);
-    border-radius: 6px;
-    padding: 95px 132px 80px; }
+    max-width: 1133px;
+    margin: 0 auto; }
 
+@media screen and (max-width: 1380px) {
+  #page-content {
+    margin: 0 10px; } }
 .intro {
   margin: 0 auto 160px;
   max-width: 723px;
@@ -245,7 +249,9 @@ PAGE CONTENT
 
 .feature-item {
   text-align: center;
-  max-width: 328px; }
+  max-width: 328px;
+  box-sizing: border-box;
+  padding: 0 20px; }
   .feature-item img {
     margin-bottom: 30px; }
   .feature-item .feature-title {
@@ -315,13 +321,27 @@ PAGE CONTENT
     font-size: 0.875em;
     padding: 14px 0 7px;
     margin-bottom: 40px; }
+  #forma input + label,
+  #forma textarea + label {
+    display: none; }
+  #forma input:focus + label,
+  #forma textarea:focus + label {
+    display: inline; }
+  #forma input:not([value=""]) + label,
+  #forma textarea:not([value=""]) + label {
+    display: inline; }
   #forma textarea {
     min-height: 92px;
     resize: none; }
   #forma input:focus,
   #forma textarea:focus {
     outline: none;
-    border-bottom: 1px solid #9c27b0; }
+    animation: focusBorder 1.5s; }
+@keyframes focusBorder {
+  0% {
+    border-bottom: 1px solid #999; }
+  100% {
+    border-bottom: 1px solid #9c27b0; } }
   #forma .submit-btn {
     background: #9c27b0;
     padding: 13px 30px;
